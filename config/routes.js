@@ -15,14 +15,16 @@ module.exports = function(router) {
 
     router.get("/api/fetch", function(req, res) {
         headlinesController.fetch(function(err, docs) {
-            if(!docs || docs.insertCount === 0) {
+            if(!docs || docs.insertedCount === 0) {
                 res.json({
                     message: "No new stories today, Check again later"
                 });
             }
             else {
+                console.log(docs);
+
                 res.json({
-                    message: "Added " + docs.insertCount + " new stories"
+                    message: "Added " + docs.insertedCount + " new stories"
                 });
             }
         });
