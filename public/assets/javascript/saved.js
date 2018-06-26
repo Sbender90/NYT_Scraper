@@ -37,7 +37,7 @@ $(document).ready(function() {
         "<a class='btn btn-danger delete'>",
         "Delete From Saved",
         "</a>",
-        "<a class='btn btn-info notes'>Articls Notes</a>",
+        "<a class='btn btn-info notes'>Article Notes</a>",
         "</h3>",
         "</div>",
         "<div class='panel-body'>",
@@ -72,23 +72,23 @@ $(document).ready(function() {
         var notesToRender = [];
         var currentNotes;
         if (!data.nots.length) {
-            currentNote = [
+            currentNotes = [
                 "<li class='list-group-item'>",
                 "You haven't written any notes yet.",
                 "</li>"
             ].join("");
-            notesToRender.push(currentNote);
+            notesToRender.push(currentNotes);
         }
         else {
             for (var i = 0; i < data.notes.length; i++) {
-                currentNote = $([
+                currentNotes = $([
                     "<li class='list-group-item note'>",
                     data.notes[i].noteText,
                     "<button class='btn btn-danger note-delete'>x</button>",
                     "</li>"
                 ].join(""));
-                currentNote.children("button").data("_id", data.notes[i]._id);
-                notesToRender.push(currentNote);
+                currentNotes.children("button").data("_id", data.notes[i]._id);
+                notesToRender.push(currentNotes);
             }
         }
 

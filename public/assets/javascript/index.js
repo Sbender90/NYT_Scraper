@@ -31,11 +31,11 @@ $(document).ready(function() {
     function createPanel(article) {
         var panel = 
         $(["<div class='panel panel-default'>",
-        "div class ='panel-heading'>",
+        "<div class ='panel-heading'>",
         "<h3>",
         article.headline,
         "<a class='btn= btn-success save'>",
-        "Save Article",
+        " Save Article",
         "</a>",
         "</h3>",
         "</div>",
